@@ -5,5 +5,23 @@ This is amazing!!!
 {% endblock head_title %}
 
 {% block content %}
-Welcome to Teetme 2 das d
+Welcome to Teetme 2
+
+<script>
+const xhr = new XMLHttpRequest()
+const method = 'GET' // "POST"
+const url = "/tweets"
+const responseType = "json"
+
+xhr.responseType = responseType
+xhr.open(method, url)
+xhr.onload = function() {
+    const serverResponse = xhr.response
+    var listedItems = serverResponse.response
+    console.log(listedItems)
+}
+xhr.send()
+
+
+</script>
 {% endblock content %}
